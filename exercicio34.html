@@ -1,0 +1,29 @@
+<!-- substituir-palavra.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Substituir Palavra</title>
+</head>
+<body>
+  <h2>Substituir Palavra</h2>
+  <input type="text" id="texto" placeholder="Digite o texto">
+  <input type="text" id="palavraAntiga" placeholder="Palavra a ser substituída">
+  <input type="text" id="palavraNova" placeholder="Palavra nova">
+  <button onclick="substituir()">Substituir</button>
+  <p id="resultado"></p>
+
+  <script>
+    function substituir() {
+      const texto = document.getElementById("texto").value;
+      const palavraAntiga = document.getElementById("palavraAntiga").value;
+      const palavraNova = document.getElementById("palavraNova").value;
+
+      if (!texto || !palavraAntiga || !palavraNova) return resultado.textContent = "Preencha todos os campos.";
+
+      const novoTexto = texto.replace(new RegExp(palavraAntiga, 'g'), palavraNova);
+      resultado.textContent = `Texto alterado: ${novoTexto}`;
+    }
+  </script>
+</body>
+</html>

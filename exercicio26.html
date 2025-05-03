@@ -1,0 +1,22 @@
+<!-- contar-palavras.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar Palavras</title>
+</head>
+<body>
+  <h2>Contar Palavras</h2>
+  <textarea id="texto" placeholder="Digite um texto aqui"></textarea><br>
+  <button onclick="contar()">Contar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contar() {
+      const texto = document.getElementById("texto").value.trim();
+      const palavras = texto.split(/\s+/).filter(Boolean);
+      resultado.textContent = `Número de palavras: ${palavras.length}`;
+    }
+  </script>
+</body>
+</html>

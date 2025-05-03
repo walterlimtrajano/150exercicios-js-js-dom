@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Jogo de Adivinhação</title></head>
+<body>
+  <h1>Adivinhe o número (1 a 100)</h1>
+  <input type="number" id="guess">
+  <button onclick="checkGuess()">Tentar</button>
+  <p id="result"></p>
+
+  <script>
+    const secret = Math.floor(Math.random() * 100) + 1;
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guess").value);
+      const result = document.getElementById("result");
+      if (guess > secret) result.textContent = "Tente um número menor!";
+      else if (guess < secret) result.textContent = "Tente um número maior!";
+      else result.textContent = "Parabéns! Você acertou!";
+    }
+  </script>
+</body>
+</html>

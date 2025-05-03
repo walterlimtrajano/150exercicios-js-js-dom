@@ -1,0 +1,22 @@
+<!-- valor-absoluto.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Valor Absoluto</title>
+</head>
+<body>
+  <h2>Exibir Valor Absoluto</h2>
+  <input type="number" id="numero" placeholder="Digite um número">
+  <button onclick="exibirValorAbsoluto()">Exibir Valor Absoluto</button>
+  <p id="resultado"></p>
+
+  <script>
+    function exibirValorAbsoluto() {
+      const num = parseFloat(document.getElementById("numero").value);
+      if (isNaN(num)) return resultado.textContent = "Digite um número válido.";
+      resultado.textContent = `Valor Absoluto: ${Math.abs(num)}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- investimento.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Investimento</title>
+</head>
+<body>
+  <h2>Dobrar Investimento</h2>
+  <input type="number" id="taxa" placeholder="Taxa de juros anual (%)">
+  <button onclick="calcular()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      const taxa = parseFloat(document.getElementById("taxa").value);
+      if (isNaN(taxa) || taxa <= 0) return resultado.textContent = "Digite uma taxa válida.";
+      const taxaDecimal = 1 + (taxa / 100);
+      let valor = 1, anos = 0;
+      while (valor < 2) {
+        valor *= taxaDecimal;
+        anos++;
+      }
+      resultado.textContent = `O investimento dobra em ${anos} ano(s) com ${taxa}% ao ano.`;
+    }
+  </script>
+</body>
+</html>

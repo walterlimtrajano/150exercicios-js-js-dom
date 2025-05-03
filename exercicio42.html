@@ -1,0 +1,28 @@
+<!-- temperaturas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperaturas</title>
+</head>
+<body>
+  <h2>Temperaturas</h2>
+  <input type="text" id="temperaturas" placeholder="Digite as temperaturas separadas por vírgula">
+  <button onclick="calcularTemperaturas()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularTemperaturas() {
+      const temperaturas = document.getElementById("temperaturas").value.split(',').map(t => parseFloat(t.trim()));
+      if (temperaturas.some(isNaN)) return resultado.textContent = "Digite temperaturas válidas.";
+
+      const soma = temperaturas.reduce((acc, temp) => acc + temp, 0);
+      const media = soma / temperaturas.length;
+      const maior = Math.max(...temperaturas);
+      const menor = Math.min(...temperaturas);
+
+      resultado.innerHTML = `Maior Temperatura: ${maior.toFixed(2)}°<br>Menor Temperatura: ${menor.toFixed(2)}°<br>Média: ${media.toFixed(2)}°`;
+    }
+  </script>
+</body>
+</html>

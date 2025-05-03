@@ -1,0 +1,27 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Simples</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <input type="text" id="usuario" placeholder="Usuário">
+  <input type="password" id="senha" placeholder="Senha">
+  <button onclick="logar()">Entrar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function logar() {
+      const user = document.getElementById("usuario").value;
+      const pass = document.getElementById("senha").value;
+      if (user === "admin" && pass === "1234") {
+        resultado.textContent = "Login bem-sucedido!";
+      } else {
+        resultado.textContent = "Usuário ou senha incorretos.";
+      }
+    }
+  </script>
+</body>
+</html>

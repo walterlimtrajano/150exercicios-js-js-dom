@@ -1,0 +1,24 @@
+<!-- votacao.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Votação</title>
+</head>
+<body>
+  <h2>Sistema de Votação</h2>
+  <button onclick="votar('opcao1')">Opção 1</button>
+  <button onclick="votar('opcao2')">Opção 2</button>
+  <button onclick="votar('opcao3')">Opção 3</button>
+  <p id="resultado"></p>
+
+  <script>
+    let votos = { opcao1: 0, opcao2: 0, opcao3: 0 };
+
+    function votar(opcao) {
+      votos[opcao]++;
+      resultado.textContent = `Opção 1: ${votos.opcao1} votos<br>Opção 2: ${votos.opcao2} votos<br>Opção 3: ${votos.opcao3} votos`;
+    }
+  </script>
+</body>
+</html>

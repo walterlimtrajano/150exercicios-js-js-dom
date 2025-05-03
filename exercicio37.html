@@ -1,0 +1,27 @@
+<!-- buscar-nome.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscar Nome</title>
+</head>
+<body>
+  <h2>Buscar Nome em Lista</h2>
+  <input type="text" id="nomeBusca" placeholder="Digite um nome para buscar">
+  <button onclick="buscarNome()">Buscar</button>
+  <p id="resultado"></p>
+
+  <script>
+    const listaNomes = ["Ana", "Carlos", "João", "Maria", "Paula", "Lucas"];
+
+    function buscarNome() {
+      const nomeBusca = document.getElementById("nomeBusca").value.trim();
+      if (listaNomes.includes(nomeBusca)) {
+        resultado.textContent = `${nomeBusca} está na lista.`;
+      } else {
+        resultado.textContent = `${nomeBusca} não está na lista.`;
+      }
+    }
+  </script>
+</body>
+</html>

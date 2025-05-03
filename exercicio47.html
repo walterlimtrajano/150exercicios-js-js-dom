@@ -1,0 +1,28 @@
+<!-- notas.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Notas</title>
+</head>
+<body>
+  <h2>Exibir Maior, Menor e Média das Notas</h2>
+  <input type="text" id="notas" placeholder="Digite as notas separadas por vírgula">
+  <button onclick="calcularNotas()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularNotas() {
+      const notas = document.getElementById("notas").value.split(',').map(n => parseFloat(n.trim()));
+      if (notas.some(isNaN)) return resultado.textContent = "Digite notas válidas.";
+
+      const soma = notas.reduce((acc, nota) => acc + nota, 0);
+      const media = soma / notas.length;
+      const maior = Math.max(...notas);
+      const menor = Math.min(...notas);
+
+      resultado.innerHTML = `Maior Nota: ${maior.toFixed(2)}<br>Menor Nota: ${menor.toFixed(2)}<br>Média: ${media.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

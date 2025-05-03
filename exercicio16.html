@@ -1,0 +1,27 @@
+<!-- pares-impares.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pares e Ímpares</title>
+</head>
+<body>
+  <h2>Pares e Ímpares até N</h2>
+  <input type="number" id="numero" placeholder="Digite um número">
+  <button onclick="mostrarNumeros()">Mostrar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function mostrarNumeros() {
+      const n = parseInt(document.getElementById("numero").value);
+      if (isNaN(n) || n < 1) return resultado.textContent = "Digite um número válido.";
+      const pares = [], impares = [];
+      for (let i = 1; i <= n; i++) {
+        if (i % 2 === 0) pares.push(i);
+        else impares.push(i);
+      }
+      resultado.innerHTML = `Pares: ${pares.join(', ')}<br>Ímpares: ${impares.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

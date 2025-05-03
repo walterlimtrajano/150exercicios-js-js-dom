@@ -1,0 +1,23 @@
+<!-- ordenar.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar Números</title>
+</head>
+<body>
+  <h2>Ordenar Números</h2>
+  <input type="text" id="numeros" placeholder="Ex: 5,3,9,1">
+  <button onclick="ordenar()">Ordenar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function ordenar() {
+      const entrada = document.getElementById("numeros").value;
+      const numeros = entrada.split(',').map(n => parseFloat(n)).filter(n => !isNaN(n));
+      numeros.sort((a, b) => a - b);
+      resultado.textContent = `Ordenados: ${numeros.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

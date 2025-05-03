@@ -1,0 +1,46 @@
+<!-- numero-romano.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Converter para Números Romanos</title>
+</head>
+<body>
+  <h2>Converter para Números Romanos</h2>
+  <input type="number" id="numero" placeholder="Digite um número">
+  <button onclick="converterParaRomano()">Converter</button>
+  <p id="resultado"></p>
+
+  <script>
+    function converterParaRomano() {
+      const numero = parseInt(document.getElementById("numero").value);
+      if (isNaN(numero) || numero <= 0) return resultado.textContent = "Digite um número válido maior que 0.";
+
+      const romanos = [
+        { valor: 1000, simbolo: 'M' },
+        { valor: 900, simbolo: 'CM' },
+        { valor: 500, simbolo: 'D' },
+        { valor: 400, simbolo: 'CD' },
+        { valor: 100, simbolo: 'C' },
+        { valor: 90, simbolo: 'XC' },
+        { valor: 50, simbolo: 'L' },
+        { valor: 40, simbolo: 'XL' },
+        { valor: 10, simbolo: 'X' },
+        { valor: 9, simbolo: 'IX' },
+        { valor: 5, simbolo: 'V' },
+        { valor: 4, simbolo: 'IV' },
+        { valor: 1, simbolo: 'I' }
+      ];
+
+      let romano = "";
+      for (const item of romanos) {
+        while (numero >= item.valor) {
+          romano += item.simbolo;
+          numero -= item.valor;
+        }
+      }
+      resultado.textContent = `Número Romano: ${romano}`;
+    }
+  </script>
+</body>
+</html>

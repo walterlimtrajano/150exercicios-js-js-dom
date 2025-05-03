@@ -1,0 +1,26 @@
+<!-- binario-para-decimal.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Binário para Decimal</title>
+</head>
+<body>
+  <h2>Converter Binário para Decimal</h2>
+  <input type="text" id="binario" placeholder="Digite um número binário">
+  <button onclick="converter()">Converter</button>
+  <p id="resultado"></p>
+
+  <script>
+    function converter() {
+      const binario = document.getElementById("binario").value.trim();
+      const decimal = parseInt(binario, 2);
+      if (isNaN(decimal)) {
+        resultado.textContent = "Digite um número binário válido.";
+      } else {
+        resultado.textContent = `Número decimal: ${decimal}`;
+      }
+    }
+  </script>
+</body>
+</html>

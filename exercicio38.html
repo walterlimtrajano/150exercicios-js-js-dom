@@ -1,0 +1,36 @@
+<!-- converter-moeda.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Converter Moeda</title>
+</head>
+<body>
+  <h2>Converter Reais para Dólares, Euros e Libras</h2>
+  <input type="number" id="valor" placeholder="Digite o valor em reais">
+  <button onclick="converter()">Converter</button>
+  <p id="resultado"></p>
+
+  <script>
+    const taxasCambio = {
+      dolar: 5.30,
+      euro: 5.60,
+      libra: 6.50
+    };
+
+    function converter() {
+      const valor = parseFloat(document.getElementById("valor").value);
+      if (isNaN(valor) || valor <= 0) {
+        resultado.textContent = "Digite um valor válido.";
+        return;
+      }
+
+      const dolar = valor / taxasCambio.dolar;
+      const euro = valor / taxasCambio.euro;
+      const libra = valor / taxasCambio.libra;
+
+      resultado.innerHTML = `Valor em Dólares: $${dolar.toFixed(2)}<br>Valor em Euros: €${euro.toFixed(2)}<br>Valor em Libras: £${libra.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

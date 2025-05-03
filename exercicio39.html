@@ -1,0 +1,33 @@
+<!-- fatores-primos.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Decompor Fatores Primos</title>
+</head>
+<body>
+  <h2>Decompor Número em Fatores Primos</h2>
+  <input type="number" id="numero" placeholder="Digite um número">
+  <button onclick="decomporFatores()">Decompor</button>
+  <p id="resultado"></p>
+
+  <script>
+    function decomporFatores() {
+      let num = parseInt(document.getElementById("numero").value);
+      if (isNaN(num) || num <= 1) {
+        resultado.textContent = "Digite um número válido maior que 1.";
+        return;
+      }
+
+      let fatores = [];
+      for (let i = 2; i <= num; i++) {
+        while (num % i === 0) {
+          fatores.push(i);
+          num /= i;
+        }
+      }
+      resultado.textContent = `Fatores primos: ${fatores.join(' x ')}`;
+    }
+  </script>
+</body>
+</html>

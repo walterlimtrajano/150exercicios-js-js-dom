@@ -1,0 +1,33 @@
+<!-- caixa-eletronico.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Caixa Eletrônico</title>
+</head>
+<body>
+  <h2>Simulação de Caixa Eletrônico</h2>
+  <input type="number" id="valor" placeholder="Digite o valor">
+  <button onclick="calcularNotas()">Calcular Notas</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularNotas() {
+      const valor = parseInt(document.getElementById("valor").value);
+      if (isNaN(valor) || valor <= 0) return resultado.textContent = "Digite um valor válido.";
+
+      const notas = [100, 50, 20, 10, 5, 2, 1];
+      let resultadoTexto = "Notas necessárias:<br>";
+
+      for (let i = 0; i < notas.length; i++) {
+        const quantidade = Math.floor(valor / notas[i]);
+        if (quantidade > 0) {
+          resultadoTexto += `${quantidade} nota(s) de R$ ${notas[i]}<br>`;
+        }
+        valor %= notas[i];
+      }
+      resultado.innerHTML = resultadoTexto;
+    }
+  </script>
+</body>
+</html>

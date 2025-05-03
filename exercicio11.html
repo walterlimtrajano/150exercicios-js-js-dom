@@ -1,0 +1,27 @@
+<!-- fibonacci.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci</title>
+</head>
+<body>
+  <h2>Sequência de Fibonacci até N</h2>
+  <input type="number" id="n" placeholder="Digite um número">
+  <button onclick="gerarFibonacci()">Gerar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function gerarFibonacci() {
+      const n = parseInt(document.getElementById("n").value);
+      if (isNaN(n) || n < 0) return resultado.textContent = "Digite um número válido.";
+      let a = 0, b = 1, sequencia = [0];
+      while (b <= n) {
+        sequencia.push(b);
+        [a, b] = [b, a + b];
+      }
+      resultado.textContent = `Sequência: ${sequencia.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

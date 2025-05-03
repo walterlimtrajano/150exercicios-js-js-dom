@@ -1,0 +1,27 @@
+<!-- divisores.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Divisores de um Número</title>
+</head>
+<body>
+  <h2>Exibir Divisores de um Número</h2>
+  <input type="number" id="numero" placeholder="Digite um número">
+  <button onclick="exibirDivisores()">Exibir Divisores</button>
+  <p id="resultado"></p>
+
+  <script>
+    function exibirDivisores() {
+      const num = parseInt(document.getElementById("numero").value);
+      if (isNaN(num) || num <= 0) return resultado.textContent = "Digite um número válido.";
+
+      const divisores = [];
+      for (let i = 1; i <= num; i++) {
+        if (num % i === 0) divisores.push(i);
+      }
+      resultado.textContent = `Divisores de ${num}: ${divisores.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

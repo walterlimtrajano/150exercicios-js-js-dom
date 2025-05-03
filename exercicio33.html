@@ -1,0 +1,30 @@
+<!-- mdc.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Máximo Divisor Comum (MDC)</title>
+</head>
+<body>
+  <h2>Calcular MDC</h2>
+  <input type="number" id="numero1" placeholder="Digite o primeiro número">
+  <input type="number" id="numero2" placeholder="Digite o segundo número">
+  <button onclick="calcularMDC()">Calcular MDC</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularMDC() {
+      const a = parseInt(document.getElementById("numero1").value);
+      const b = parseInt(document.getElementById("numero2").value);
+      if (isNaN(a) || isNaN(b)) return resultado.textContent = "Digite dois números válidos.";
+
+      while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+      }
+      resultado.textContent = `MDC: ${a}`;
+    }
+  </script>
+</body>
+</html>

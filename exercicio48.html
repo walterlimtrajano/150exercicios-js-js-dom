@@ -1,0 +1,34 @@
+<!-- frequencia-letras.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Frequência das Letras</title>
+</head>
+<body>
+  <h2>Contar Frequência de Letras</h2>
+  <textarea id="texto" placeholder="Digite o texto"></textarea><br><br>
+  <button onclick="contarFrequencia()">Contar Frequência</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contarFrequencia() {
+      const texto = document.getElementById("texto").value.trim().toLowerCase();
+      const frequencia = {};
+
+      for (let letra of texto) {
+        if (/[a-z]/.test(letra)) {
+          frequencia[letra] = frequencia[letra] ? frequencia[letra] + 1 : 1;
+        }
+      }
+
+      let resultadoTexto = "Frequência das Letras: <br>";
+      for (let letra in frequencia) {
+        resultadoTexto += `${letra}: ${frequencia[letra]}<br>`;
+      }
+
+      resultado.innerHTML = resultadoTexto;
+    }
+  </script>
+</body>
+</html>

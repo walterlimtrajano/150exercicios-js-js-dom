@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Soma de 1 a N</title></head>
+<body>
+  <h1>Soma de 1 até N</h1>
+  <input type="number" id="n">
+  <button onclick="sum()">Calcular</button>
+  <p id="result"></p>
+
+  <script>
+    function sum() {
+      const n = parseInt(document.getElementById("n").value);
+      const total = (n * (n + 1)) / 2;
+      document.getElementById("result").textContent = `Resultado: ${total}`;
+    }
+  </script>
+</body>
+</html>
+

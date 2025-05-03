@@ -1,0 +1,31 @@
+<!-- adivinha-v2.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo de Adivinhação</title>
+</head>
+<body>
+  <h2>Adivinhe o Número</h2>
+  <input type="number" id="tentativa" placeholder="Digite um número de 1 a 100">
+  <button onclick="tentar()">Tentar</button>
+  <p id="resultado"></p>
+
+  <script>
+    let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+    let tentativas = 0;
+
+    function tentar() {
+      const tentativa = parseInt(document.getElementById("tentativa").value);
+      tentativas++;
+      if (tentativa === numeroSecreto) {
+        resultado.textContent = `Parabéns! Você acertou em ${tentativas} tentativa(s).`;
+      } else if (tentativa < numeroSecreto) {
+        resultado.textContent = "Tente um número maior.";
+      } else {
+        resultado.textContent = "Tente um número menor.";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média</title>
+</head>
+<body>
+    <h2>Cálculo da Média</h2>
+    <!-- Entradas para as quatro notas-->
+     <label for="">Nota 1: <input type="number" id="nota1"></label><br>
+     <label for="">Nota 2: <input type="number" id="nota2"></label><br>
+     <label for="">Nota 3: <input type="number" id="nota3"></label><br>
+     <label for="">Nota 4: <input type="number" id="nota4"></label><br>
+
+     <!-- Botão para calcular-->
+     <button onclick="calcularMedia()">Calcular Média</button>
+
+    <!-- Onde o resultado será exibido -->
+     <p id="resultado"></p>
+
+     <script>
+        function calcularMedia(){
+            // Captura os valores das notas e converte para número
+            const n1 = parseFloat(document.getElementById('nota1').value);
+            const n2 = parseFloat(document.getElementById('nota2').value);
+            const n3 = parseFloat(document.getElementById('nota3').value);
+            const n4 = parseFloat(document.getElementById('nota4').value);
+
+            //verifica se os campos foram preenchidos corretamente
+            if (isNaN(n1) || isNaN(n2) ||isNaN(n3) || isNaN(n4)) {
+                document.getElementById('resultado').textContent = 'por favor, insira todas as notas corretamente';
+                return
+            }
+
+             // Calcula a média
+      const media = (n1 + n2 + n3 + n4) / 4;
+
+// Define a mensagem com base na média
+let mensagem;
+if (media >= 7) {
+  mensagem = `Média: ${media.toFixed(2)} - Aprovado! 🎉`;
+} else {
+  mensagem = `Média: ${media.toFixed(2)} - Reprovado. 😞`;
+}
+
+// Exibe o resultado na página
+document.getElementById('resultado').textContent = mensagem;
+        }
+     </script>
+</body>
+</html>

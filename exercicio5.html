@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tabuada</title></head>
+<body>
+  <h1>Tabuada</h1>
+  <input type="number" id="num">
+  <button onclick="showTable()">Mostrar</button>
+  <ul id="result"></ul>
+
+  <script>
+    function showTable() {
+      const num = parseInt(document.getElementById("num").value);
+      const result = document.getElementById("result");
+      result.innerHTML = '';
+      for (let i = 1; i <= 10; i++) {
+        result.innerHTML += `<li>${num} x ${i} = ${num * i}</li>`;
+      }
+    }
+  </script>
+</body>
+</html>

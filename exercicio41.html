@@ -1,0 +1,28 @@
+<!-- preco-medio.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Preço Médio, Maior e Menor</title>
+</head>
+<body>
+  <h2>Calcular Preço Médio, Maior e Menor Preço</h2>
+  <input type="text" id="precos" placeholder="Digite os preços separados por vírgula">
+  <button onclick="calcularPrecos()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularPrecos() {
+      const precos = document.getElementById("precos").value.split(',').map(p => parseFloat(p.trim()));
+      if (precos.some(isNaN)) return resultado.textContent = "Digite preços válidos.";
+
+      const soma = precos.reduce((acc, preco) => acc + preco, 0);
+      const media = soma / precos.length;
+      const maior = Math.max(...precos);
+      const menor = Math.min(...precos);
+
+      resultado.innerHTML = `Preço Médio: R$ ${media.toFixed(2)}<br>Maior Preço: R$ ${maior.toFixed(2)}<br>Menor Preço: R$ ${menor.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

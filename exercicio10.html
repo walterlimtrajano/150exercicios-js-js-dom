@@ -1,0 +1,22 @@
+<!-- binario.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Decimal para Binário</title>
+</head>
+<body>
+  <h2>Converter para Binário</h2>
+  <input type="number" id="numero" placeholder="Digite um número decimal">
+  <button onclick="converter()">Converter</button>
+  <p id="resultado"></p>
+
+  <script>
+    function converter() {
+      const n = parseInt(document.getElementById("numero").value);
+      if (isNaN(n) || n < 0) return resultado.textContent = "Digite um número inteiro positivo.";
+      resultado.textContent = `Binário: ${n.toString(2)}`;
+    }
+  </script>
+</body>
+</html>

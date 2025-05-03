@@ -1,0 +1,22 @@
+<!-- palindromo.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Palíndromo</title>
+</head>
+<body>
+  <h2>Verificar Palíndromo</h2>
+  <input type="text" id="texto" placeholder="Digite uma palavra">
+  <button onclick="verificar()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const texto = document.getElementById("texto").value.toLowerCase().replace(/\s+/g, '');
+      const invertido = texto.split('').reverse().join('');
+      resultado.textContent = texto === invertido ? "É palíndromo" : "Não é palíndromo";
+    }
+  </script>
+</body>
+</html>

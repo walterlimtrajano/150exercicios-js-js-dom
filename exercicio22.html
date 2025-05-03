@@ -1,0 +1,23 @@
+<!-- nomes-ordem.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar Nomes</title>
+</head>
+<body>
+  <h2>Ordenar Nomes</h2>
+  <textarea id="nomes" placeholder="Digite nomes separados por vírgula"></textarea>
+  <br>
+  <button onclick="ordenar()">Ordenar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function ordenar() {
+      const nomes = document.getElementById("nomes").value.split(",").map(n => n.trim()).filter(Boolean);
+      nomes.sort((a, b) => a.localeCompare(b));
+      resultado.textContent = `Ordem alfabética: ${nomes.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

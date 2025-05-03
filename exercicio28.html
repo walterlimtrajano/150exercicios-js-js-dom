@@ -1,0 +1,26 @@
+<!-- temperatura.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Converter Temperatura</title>
+</head>
+<body>
+  <h2>Converter Temperatura</h2>
+  <input type="number" id="celsius" placeholder="Temperatura em Celsius">
+  <button onclick="converter()">Converter</button>
+  <p id="resultado"></p>
+
+  <script>
+    function converter() {
+      const celsius = parseFloat(document.getElementById("celsius").value);
+      if (isNaN(celsius)) return resultado.textContent = "Digite um valor válido em Celsius.";
+      
+      const fahrenheit = (celsius * 9/5) + 32;
+      const kelvin = celsius + 273.15;
+      
+      resultado.innerHTML = `Temperatura em Fahrenheit: ${fahrenheit.toFixed(2)}°F<br>Temperatura em Kelvin: ${kelvin.toFixed(2)}K`;
+    }
+  </script>
+</body>
+</html>

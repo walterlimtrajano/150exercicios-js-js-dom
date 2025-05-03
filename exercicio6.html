@@ -1,0 +1,24 @@
+<!-- nomes.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomes</title>
+</head>
+<body>
+  <h2>Nome mais curto e mais longo</h2>
+  <textarea id="nomes" placeholder="Digite os nomes separados por vírgula"></textarea>
+  <button onclick="analisarNomes()">Analisar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function analisarNomes() {
+      const nomes = document.getElementById("nomes").value.split(",").map(n => n.trim()).filter(n => n);
+      if (nomes.length === 0) return resultado.textContent = "Digite pelo menos um nome.";
+      const maisCurto = nomes.reduce((a, b) => a.length <= b.length ? a : b);
+      const maisLongo = nomes.reduce((a, b) => a.length >= b.length ? a : b);
+      resultado.textContent = `Mais curto: ${maisCurto}, Mais longo: ${maisLongo}`;
+    }
+  </script>
+</body>
+</html>

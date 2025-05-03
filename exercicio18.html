@@ -1,0 +1,30 @@
+<!-- produtos.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Compras</title>
+</head>
+<body>
+  <h2>Produtos e Preços</h2>
+  <textarea id="produtos" placeholder="Ex: arroz:5.50, feijão:7.80"></textarea><br>
+  <button onclick="calcularTotal()">Calcular Total</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularTotal() {
+      const linhas = document.getElementById("produtos").value.split(",");
+      let total = 0;
+      for (let item of linhas) {
+        const partes = item.split(":");
+        if (partes.length === 2) {
+          const preco = parseFloat(partes[1]);
+          if (!isNaN(preco)) total += preco;
+        }
+      }
+      const desconto = total > 100 ? total * 0.10 : 0;
+      resultado.textContent = `Total: R$ ${total.toFixed(2)} - Desconto: R$ ${desconto.toFixed(2)} - Final: R$ ${(total - desconto).toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

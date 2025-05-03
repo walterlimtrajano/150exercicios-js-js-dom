@@ -1,0 +1,24 @@
+<!-- maior-menor.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Maior e Menor</title>
+</head>
+<body>
+  <h2>Maior e Menor Número</h2>
+  <input type="text" id="numeros" placeholder="Ex: 10, 2, 30, 4">
+  <button onclick="analisar()">Analisar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function analisar() {
+      const valores = document.getElementById("numeros").value.split(',').map(n => parseFloat(n)).filter(n => !isNaN(n));
+      if (valores.length === 0) return resultado.textContent = "Insira valores válidos.";
+      const maior = Math.max(...valores);
+      const menor = Math.min(...valores);
+      resultado.textContent = `Maior: ${maior}, Menor: ${menor}`;
+    }
+  </script>
+</body>
+</html>

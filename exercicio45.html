@@ -1,0 +1,24 @@
+<!-- ordem-decrescente.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordem Decrescente</title>
+</head>
+<body>
+  <h2>Exibir Números em Ordem Decrescente</h2>
+  <input type="text" id="numeros" placeholder="Digite os números separados por vírgula">
+  <button onclick="exibirDecrescente()">Exibir</button>
+  <p id="resultado"></p>
+
+  <script>
+    function exibirDecrescente() {
+      const numeros = document.getElementById("numeros").value.split(',').map(num => parseInt(num.trim()));
+      if (numeros.some(isNaN)) return resultado.textContent = "Digite números válidos.";
+
+      numeros.sort((a, b) => b - a);
+      resultado.textContent = `Números em ordem decrescente: ${numeros.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

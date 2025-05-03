@@ -1,0 +1,28 @@
+<!-- vogais.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vogais e Consoantes</title>
+</head>
+<body>
+  <h2>Contar Vogais e Consoantes</h2>
+  <input type="text" id="texto" placeholder="Digite um texto">
+  <button onclick="contar()">Contar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function contar() {
+      const texto = document.getElementById("texto").value.toLowerCase();
+      let vogais = 0, consoantes = 0;
+      for (let letra of texto) {
+        if (/[a-z]/.test(letra)) {
+          if ("aeiou".includes(letra)) vogais++;
+          else consoantes++;
+        }
+      }
+      resultado.textContent = `Vogais: ${vogais}, Consoantes: ${consoantes}`;
+    }
+  </script>
+</body>
+</html>
